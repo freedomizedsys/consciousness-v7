@@ -1,3 +1,4 @@
+
 # Consciousness Studies v7  
 **Existence Operating System — A Dynamic Unified Framework for Consciousness Generation, Collective Coexistence, and Cosmic Evolution**
 
@@ -32,4 +33,24 @@ pip install -r requirements.txt
 
 # 3. Run the simulation and generate figures
 python consciousness_v7_simulation.py
+```
 
+The figures will be generated in the `figures/` folder.
+
+## Reproducibility Statement
+
+All simulations (including Euler, RK4 with adaptive step size, Monte Carlo parameter scanning, and Bayesian fitting) were implemented using Python 3.12 + NumPy, SciPy, and PyMC. The complete executable code, Jupyter Notebooks, and scripts for generating the four figures are publicly available in this repository.
+
+Simulation settings (initial conditions, random seeds, parameter ranges) are clearly documented in the code.
+
+## Paper
+
+The full paper is available in Markdown format in the `paper/` directory (to be added).
+
+## Contact
+
+Author: shirlun@freedomized.com
+
+## License
+
+This project is licensed under the MIT License — feel free to use, modify, and iterate upon it.
