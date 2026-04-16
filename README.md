@@ -1,4 +1,4 @@
-# Consciousness Studies v7  
+# Consciousology v7  
 **Existence Operating System — A Dynamic Unified Framework for Consciousness Generation, Collective Coexistence, and Cosmic Evolution**
 
 **意識學 v7**  
@@ -10,11 +10,11 @@
 
 ### English Version
 
-This repository contains the numerical simulation code, Jupyter Notebooks, and figures for the paper **"Consciousness Studies v7"**.
+This repository contains the numerical simulation code, Jupyter Notebooks, and figures for the paper **"Consciousology v7"**.
 
 #### Paper Abstract
 
-Consciousness Studies v7 proposes a unified dynamic framework that formalizes consciousness as the universe's optimal evolutionary protocol for self-observation, asymmetry maintenance, and complexity generation. The framework consists of four core equations, extended with critical thresholds, optimal control paths, mean-field collective dynamics, and a holographic multi-scale architecture.
+Consciousology v7 proposes a unified dynamic framework that formalizes consciousness as the universe's optimal evolutionary protocol for self-observation, asymmetry maintenance, and complexity generation. The framework consists of four core equations, extended with critical thresholds, optimal control paths, mean-field collective dynamics, and a holographic multi-scale architecture.
 
 ---
 
