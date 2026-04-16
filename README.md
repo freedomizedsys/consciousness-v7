@@ -8,7 +8,7 @@
 
 ---
 
-### English Version / 英文版本
+### English Version
 
 This repository contains the numerical simulation code, Jupyter Notebooks, and figures for the paper **"Consciousness Studies v7"**.
 
@@ -18,7 +18,7 @@ Consciousness Studies v7 proposes a unified dynamic framework that formalizes co
 
 ---
 
-### 中文版本 / Chinese Version
+### 中文版本
 
 本儲存庫包含「意識學 v7」論文的所有數值模擬程式碼、Jupyter Notebook 以及論文中所使用的四張圖表。
 
@@ -44,11 +44,12 @@ git clone https://github.com/shirlun/consciousness-v7.git
 cd consciousness-v7
 pip install -r requirements.txt
 python consciousness_v7_simulation.py
+```
 
 The figures will be generated in the `figures/` folder.
 
 Contact / 聯絡方式
-Author / 作者: shirlun@freedomized.com
+Author / 作者: freedomizedsystemsltd@gmail.com
 
 License / 授權
 MIT License
