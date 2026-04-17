@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>意識學 v7 - 完整論文</title>
     
-    <!-- MathJax 3 配置（加強版） -->
+    <!-- MathJax 3 加強配置 -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
+                processEscapes: true,
+                macros: {
+                    "\\to": "\\rightarrow",
+                    "\\approx": "\\approx"
+                }
             },
-            svg: {
-                fontCache: 'global'
-            }
+            svg: { fontCache: 'global' }
         };
         
-        // 頁面載入後強制重新處理 MathJax
-        window.onload = function() {
+        // 頁面載入完成後強制重新渲染
+        window.addEventListener('load', function() {
+            MathJax.typesetClear();
             MathJax.typeset();
-        };
+        });
     </script>
 
     <style>
@@ -34,21 +37,20 @@
             line-height: 1.85; 
             color: #333;
         }
-        h1, h2, h3 { color: #2c3e50; margin-top: 35px; }
+        h1, h2, h3 { color: #2c3e50; margin-top: 40px; }
         .abstract { 
             background: #f8f9fa; 
-            padding: 25px; 
+            padding: 28px; 
             border-radius: 10px; 
             margin: 30px 0; 
         }
         img { 
             max-width: 100%; 
             height: auto; 
-            margin: 30px 0; 
+            margin: 35px 0; 
             border: 1px solid #ddd; 
             border-radius: 8px; 
         }
-        .math { margin: 20px 0; }
     </style>
 </head>
 <body>
@@ -99,7 +101,7 @@ $$ C_i = |\alpha_i|^2 (G_0 + k P) \times W_i \times K_i \times G_{p,i} \times v_
 $$ |\Psi_{AB}\rangle = \frac{1}{\sqrt{2}} \left( |\psi_A\rangle \otimes |\psi_B\rangle + e^{i\phi} |\psi_B\rangle \otimes |\psi_A\rangle \right) $$
 
 **推導 4：平衡態分析**  
-$$ \frac{dC}{dt} = 0 $$ 僅在 \( M=0 \) 或 \( v=0 \) 時成立，無非平凡穩態。
+$$ \frac{dC}{dt} = 0 $$ 僅在 \( M = 0 \) 或 \( v = 0 \) 時成立，無非平凡穩態。
 
 **推導 5：Lyapunov 函數**  
 定義 \( V(C,M) = \frac{1}{1+\alpha M} + \frac{1}{C} \)，證明 \( \frac{dV}{dt} < 0 \)，成長全局吸引。
