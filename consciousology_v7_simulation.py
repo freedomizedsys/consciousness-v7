@@ -5,6 +5,66 @@ import pymc as pm
 import arviz as az
 import seaborn as sns
 
+# ================= Euler method (benchmark) =================
+# ====================== 歐拉方法（基準）======================
+def euler_integrate(params, t_max=100, dt=1.0):
+    t = np.arange(0, t_max + dt, dt)
+    C, M, P = 0.1, 0.0, params[2]   # 初始條件
+    C_list, M_list = [], []
+    
+    for ti in t:
+        C_list.append(C)
+        M_list.append(M)
+        dC, dM, dP = consciousness_system(ti, [C, M, P], params)
+        C += dC * dt
+        M += dM * dt
+        P += dP * dt
+        P = max(P, 0)
+    
+    return t, np.array(C_list), np.array(M_list)
+
+# ================== RK4 Adaptive Step Size =================
+# ====================== RK4 自適應步長 ======================
+def rk4_adaptive(params, t_max=100, atol=1e-6):
+    sol = solve_ivp(
+        fun=lambda t, y: consciousness_system(t, y, params),
+        t_span=[0, t_max],
+        y0=[0.1, 0.0, params[2]],
+        method='RK45',
+        atol=atol,
+        rtol=1e-6
+    )
+    return sol.t, sol.y[0], sol.y[1]   # t, C, M
+
+# ================= Monte Carlo parameter scan ================
+# ====================== 蒙特卡羅參數掃描 ======================
+def monte_carlo_scan(n_samples=10000):
+    results = []
+    for _ in range(n_samples):
+        k = np.random.uniform(0.1, 1.0)
+        v = np.random.uniform(0.01, 0.1)
+        P0 = np.random.uniform(1.0, 8.0)
+        params = [k, v, 0.2, 0.05, 0.01, 1.0, 5.0, 0.8, 1.5, 0.5, 1.0, 1.0]
+        _, C_final, _ = rk4_adaptive(params, t_max=100)
+        results.append({'k': k, 'v': v, 'P0': P0, 'C100': C_final[-1]})
+    return results
+
+# ================ Bayesian Fitting Paradigm ================
+# ====================== 貝葉斯擬合範式 ======================
+def bayesian_fitting(observed_data):
+    with pm.Model() as model:
+        k = pm.Uniform('k', 0.1, 1.0)
+        v = pm.Uniform('v', 0.01, 0.1)
+        sigma = pm.HalfNormal('sigma', sigma=1.0)
+
+        # Simplified likelihood function (replace with real data in actual use)
+        # 簡化似然函數（實際使用時替換為真實數據）
+        mu = k * 8.0 * v * 10   # Simplified model 簡化模型
+        C_obs = pm.Normal('C_obs', mu=mu, sigma=sigma, observed=observed_data)
+        
+        trace = pm.sample(2000, tune=1000, return_inferencedata=True)
+    return trace
+
 # ================== Core Dynamic System ==================
 # ====================== 核心動態系統 ======================
 def consciousness_system(t, y, params):
