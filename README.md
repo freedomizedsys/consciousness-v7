@@ -30,7 +30,11 @@ Consciousology v7 proposes a unified dynamic framework that formalizes conscious
 
 ---
 
-**[Full paper / 完整論文](paper/consciousology_v7.html)**
+### Full paper / 完整論文
+
+**[中文版本](paper/consciousology_cn_v7.html)**
+
+**[English Version](paper/consciousology_en_v7.html)**
 
 **[Numerical Simulation Demo / 數值模擬示範](notebooks/consciousology_numerical_simulation_demonstration.ipynb)**
 
