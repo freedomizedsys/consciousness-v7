@@ -4,7 +4,7 @@
 （數學框架 + 擴展推導 + 數值模擬 + 跨學科應用）
 
 **作者**  
-freedomizedsystemsltd@gmail.com
+shirlun@freedomized.com (mailto://freedomizedsystemsltd@gmail.com)
 
 **日期**  
 2026 年 4 月
