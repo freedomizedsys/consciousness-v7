@@ -72,6 +72,6 @@ The figures will be generated in the `figures/` folder.
 
 freedomizedsystemsltd@gmail.com
 
-### Author / 作者:
+### Author / 作者
 
-shirlun@freedomized.com
+Shirlun
