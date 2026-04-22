@@ -524,229 +524,207 @@
       </p>
       
     
-<h3>數值模擬驗證、參數校準與圖表分析</h3>
-<p><strong>1. 數值模擬方法</strong></p>
-<p>
-  為確保數值結果的穩定性與可重現性，本研究採用四階龍格-庫塔法（RK4）作為主要積分器，並結合自適應步長控制。核心微分方程組（包含
-  \(C(t)\)、\(M(t)\)、\(P(t)\) 及記憶累積動態）以初始時間步長值 \(\Delta t_0 = 0.5\)
-  進行積分，誤差容許度設為
-  \(10^{-6}\)。當局部截斷誤差超過閾值時，步長自動減半；當誤差低於 \(10^{-8}\)
-  時，步長自動加倍。</p>
-<p>
-  <strong>步長敏感性測試</strong>：我們測試了三種方案：固定步長的 Euler 法（\(\Delta t =
-  1.0, 0.5\)）、固定步長的 RK4，以及自適應步長的 RK4。結果顯示，在高 \(k\)（\(k
-  \geq 0.8\)）的強非線性區域，自適應 RK4 相對於固定 Euler 法的累積誤差降低
-  87%，確認了良好的數值穩定性。</p>
-<p><strong>2. 參數掃描與統計分析</strong>：</p>
-<ul data-tight="true">
-  <li>
-    <p>
-      採用 <strong>Monte Carlo 抽樣</strong>（10,000 次獨立運行），對關鍵參數 \(k
-      \in [0.1, 1.0]\)、\(v \in [0.01, 0.1]\)、\(P_0 \in [1, 8]\) 進行均勻隨機抽樣。
-    </p>
-  </li>
-  <li>
-    <p>
-      同時，使用 <strong>Bayesian 參數估計</strong>（以 PyMC 實現），以 8
-      週縱向自報數據與 HRV/EEG 指標作為先驗，來推斷後驗分佈。
-    </p>
-  </li>
-  <li>
-    <p>
-      敏感性分析採用 Sobol’ 全局敏感性指標，量化各參數對最終 \(C(100)\) 的貢獻度。
-    </p>
-  </li>
-</ul>
-<h4 style="text-align: left;">3. 參數校準的可行性與實證基礎</h4>
-<p>
-  本框架的所有參數均設計為可透過現有神經科技與心理測量工具進行縱向校準。以下列出關鍵參數的實證校準路徑與最新支持研究：
-</p>
-<table border="1" style="border-collapse: collapse; width: 100%;">
-  <tbody>
-    <tr>
-      <th>
-        
-        <span style="font-size: x-small;">參數</span> 
-      </th>
-      <th>
-        
-        <span style="font-size: x-small;">推薦測量工具</span> 
-      </th>
-      <th>
-        
-        <span style="font-size: x-small;">最新研究支持</span> 
-      </th>
-      <th>
-        
-        <span style="font-size: x-small;">校準方法示例</span> 
-      </th>
-    </tr>
-    <tr>
-      <td>
-        
-          
-        
-          <span style="font-size: x-small;">\(v = \Delta S / \Delta t\)（不對稱性維持率）</span>
-          
-        
-      </td>
-      <td>
-        
-          
-        
-          <span style="font-size: x-small;">fMRI 腦熵（brain entropy）</span> 
-        
-      </td>
-      <td>
-        
-          
-        
-          <span style="font-size: x-small;">Saxe et al. (2025) 創造力任務 fMRI 研究；Medaglia et al. (2024)
-            腦網絡多樣性</span> 
-        
-      </td>
-      <td>
-        
-          
-        
-          <span style="font-size: x-small;">創造力任務期間腦熵變化 + 每日探索日誌，計算活動熵</span>
-          
-        
-      </td>
-    </tr>
-    <tr>
-      <td>
-        
-        <span style="font-size: x-small;">\(k\)（痛苦轉化效率）</span> 
-      </td>
-      <td>
+      <h3>數值模擬、參數校準和圖形分析</h3>
+      <br />
+      <p>1. 數值模擬方法</p>
+      <p>
+        為確保數值結果的穩定性和可重複性，本研究採用<b>四階龍格-庫塔法（RK4）</b>作為主要積分器，並結合<b>自適應步長控制</b>。核心微分方程組（包括\(
+        C(t) \)、\( M(t) \)、\( P(t) \) 以及記憶累積的動態過程）以\( \Delta t_0
+        = 0.5 \)的初始時間步長和\( 10^{-6}
+        \)的誤差容許度進行積分。演算法設計為：當局部截斷誤差超過閾值時，步長自動減半；當誤差低於\(
+        10^{-8} \)時，步長就會加倍。
+      </p>
+      <p>
+        <b>步長敏感度分析</b
+        >：評估了三種數值格式以驗證其收斂性：固定步長歐拉法（\( \Delta t = 1.0,
+        0.5 \)）、固定步長 RK4 和自適應步長 RK4。結果表明，在高非線性區域（\( k
+        \) ≥ 0.8 \)），自適應 RK4 相較於固定步長歐拉法可將累積誤差降低
+        87%，從而驗證了該模擬框架的數值穩健性和可靠性。
+      </p>
+      <p><strong>2. 參數掃描與統計分析方法</strong></p>
 
-          
+        <p>
+          可使用蒙特卡羅抽樣方法（10,000
+          次獨立試驗）對關鍵參數空間進行均勻隨機抽樣：\(k \in [0.1, 1.0]\), \(v
+          \in [0.01, 0.1]\), 和 \(P_0 \in [1, 8]\)。
+        </p>
+        <p>
+          同時，可利用貝葉斯參數估計（透過 PyMC 實現）推斷後驗分佈；將為期 8
+          週的縱向自我報告數據與 HRV/EEG 指標相結合，以建立經驗先驗分佈。
+        </p>
+        <p>
+          為進行敏感度分析，可計算 Sobol 全域敏感度指數，以量化每個參數對最終
+          \(C(100)\) 變異數的貢獻。
+        </p>
 
-          <span style="font-size: x-small;">EEG α波不對稱性 + fMRI DMN 活動</span> 
-
-      </td>
-      <td>
-
-          
-
-          <span style="font-size: x-small;">Fox et al. (2024) 正念訓練前後 fMRI；2025 瑜伽專注/分心數據集</span>
-          
-
-      </td>
-      <td>
-
-          
-
-          <span style="font-size: x-small;">8 週正念或瑜伽訓練前後 Δ彈性分數，最小二乘擬合</span>
-          
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        
-        <span style="font-size: x-small;">\(M\)（長期記憶強度）</span> 
-      </td>
-      <td>
-
-          
-
-          <span style="font-size: x-small;">EEG θ/γ 耦合 + 間隔重複測試</span> 
-
-      </td>
-      <td>
-
-          
-
-          <span style="font-size: x-small;">Herweg et al. (2023)；2026 瑜伽多模態數據集</span>
-          
-
-      </td>
-      <td>
-
-          
-
-          <span style="font-size: x-small;">間隔重複回憶準確率 + EEG θ-γ 相位振幅耦合</span>
-          
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        
-        <span style="font-size: x-small;">\(P\)（痛苦強度）</span> 
-      </td>
-      <td>
-          
-          <span style="font-size: x-small;">HRV（RMSSD / LF/HF 比值）</span> 
-      </td>
-      <td>
-          
-          <span style="font-size: x-small;">Thayer et al. (2012)；2026 瑜伽分心狀態 HRV 數據</span>
-          
-      </td>
-      <td>
-          
-          <span style="font-size: x-small;">每日 HRV 測量 + 自報 PANAS 負向情緒分數</span>
-          
-      </td>
-    </tr>
-    <tr>
-      <td>
-        
-        <span style="font-size: x-small;">\(H\)（快樂強度）</span> 
-      </td>
-      <td>
-          
-          <span style="font-size: x-small;">PANAS 正向情緒量表 + EEG α不對稱性</span> 
-      </td>
-      <td>
-          
-          <span style="font-size: x-small;">Watson et al. (1988)；2026 瑜伽專注狀態 EEG 數據</span>
-          
-      </td>
-      <td>
-          
-          <span style="font-size: x-small;">即時 PANAS 自報 + 左前額葉 α功率</span> 
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p><strong>最新實證支持</strong>：</p>
-<ul data-tight="true">
-  <li>
-    <p>
-      <strong>Saxe et al. (2025)</strong> 在創造力任務中使用 fMRI
-      測量腦熵，發現高創造力狀態下腦網絡多樣性顯著提升，可直接用於校準 \(v =
-      \Delta S / \Delta t\)。
-    </p>
-  </li>
-  <li>
-    <p>
-      <strong>2026 年瑜伽專注/分心多模態數據集</strong>（EEG、HRV、影像）記錄了受試者在專注與分心狀態下的多維指標，為
-      \(k\)、\(v\)、\(M\) 的縱向校準提供了高品質開放數據。
-    </p>
-  </li>
-</ul>
-<p><strong>校準流程建議</strong>：</p>
-<ol data-tight="true">
-  <li><p>縱向追蹤：受試者每日記錄自報量表並同步穿戴式 HRV/EEG 數據。</p></li>
-  <li>
-    <p>
-      Bayesian 擬合：以 4–12 週數據結合 fMRI 腦熵與 HRV 指標，推斷參數後驗分佈。
-    </p>
-  </li>
-  <li>
-    <p>
-      多模態驗證：將腦熵、θ/γ 耦合與行為指標結合，建立參數與神經標記的映射關係。
-    </p>
-  </li>
-</ol>
-<p>
-  這些實證工具與最新數據集顯示，本框架的參數不僅在理論上無量綱，更具高度可操作性與可驗證性。
-</p>
-<h4 style="text-align: left;">4. 數值模擬方法</h4>
+      <h4>3. 參數校準的可行性與實證基礎</h4>
+      <p>
+        本框架中的所有參數均旨在利用現有的神經技術和心理測量工具進行縱向校準。關鍵參數的實證校準路徑與支持研究如下：
+      </p>
+      
+      <table border="1" style="border-collapse: collapse; width: 100%;">
+        <tbody>
+          <tr>
+            <th>
+              <span style="font-size: x-small;">參數</span>
+            </th>
+            <th>
+              <span style="font-size: x-small;">推薦儀器</span>
+            </th>
+            <th><span style="font-size: x-small;">相關文獻</span></th>
+            <th>
+              <span style="font-size: x-small;">校準方法</span>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: x-small;"
+                >\(v = \Delta S / \Delta t\)（不對稱性維持率）</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >fMRI 腦熵（brain entropy）</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >Saxe et al. (2025) 創造力任務 fMRI 研究；Medaglia et al. (2024)
+                腦網絡多樣性</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >將創造性任務期間的大腦熵波動與日常探索日誌進行比對，以計算活動熵。</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: x-small;">\(k\)（痛苦轉化效率）</span>
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >EEG α波不對稱性; fMRI DMN 活動</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >Fox et al. (2024) 正念訓練前後 fMRI；2025
+                瑜伽專注/分心數據集</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >8 週正念或瑜珈介入前後認知彈性分數的最小平方法擬合。</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: x-small;">\(M\)（長期記憶強度）</span>
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >EEG θ/γ 耦合; 間隔重複測試</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >Herweg et al. (2023)；2026 瑜伽多模態數據集</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >間隔重複回憶準確率 + EEG θ-γ 相位振幅耦合</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: x-small;">\(P\)（痛苦強度）</span>
+            </td>
+            <td>
+              <span style="font-size: x-small;">HRV（RMSSD / LF/HF 比值）</span>
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >Thayer et al. (2012)；2026 瑜伽分心狀態 HRV 數據</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >每日 HRV 指標與自我報告的 PANAS 負面情緒評分的相關性。</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: x-small;">\(H\)（快樂強度）</span>
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >PANAS 正向情緒量表; α不對稱性</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >Watson et al. (1988)；2026 瑜伽專注狀態 EEG 數據</span
+              >
+            </td>
+            <td>
+              <span style="font-size: x-small;"
+                >即時 PANAS 自報 + 左前額葉 α功率</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><b>近期實證研究</b></p>
+      <p>本框架得到了神經動力學領域前沿研究成果的強化：</p>
+      <ul data-tight="true">
+        <li>
+          <p>
+            <b>腦熵與創造力</b>：Saxe 等人 (2025) 利用 fMRI
+            量化了創造性認知過程中的腦熵，發現網路多樣性顯著增強。這為不對稱性維持率
+            \( v \) 提供了一個直接的經驗指標。
+          </p>
+        </li>
+        <li>
+          <p>
+            多模態資料集：2026
+            年瑜珈專注/分心多模態資料集（包含腦電圖、心率變異性和影像資料）提供了高保真度的注意力狀態縱向指標。此資料集可作為校準不同受試者的&nbsp;\(k\)、\(v\)
+            和 \(M\)&nbsp;的基礎資源。
+          </p>
+        </li>
+      </ul>
+      <p><b>建議的校準方案</b></p>
+      <p>為確保高品質的參數估計，建議採用三級程序：</p>
+      <ol data-tight="true">
+        <li>
+          <p>
+            <b>縱向追蹤</b>：將自我報告量表與穿戴式 HRV/EEG
+            資料進行連續每日同步，以捕捉時間波動。
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Bayesian 推論</b>：利用 4-12 週的縱向數據，結合 fMRI 腦熵和 HRV
+            指標，推斷參數的後驗分佈。
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>跨模態驗證</b
+            >：透過綜合腦熵、\(\theta\)/\(\gamma\)&nbsp;耦合和行為表現，建立數學參數與神經標記之間的嚴格映射。
+          </p>
+        </li>
+      </ol>
+      <p>
+        本框架的參數不僅僅是理論上的抽象概念；它們在計算上是可操作的，在實驗上是可驗證的，彌合了抽象意識建模與經驗神經科學之間的差距。
+      </p>
+    
+<h4>4. 數值模擬方法</h4>
 <p>
   為驗證框架的動態行為與預測能力，我們採用顯式 Euler
   前向積分方法對核心微分方程進行數值求解。模擬設定如下：
