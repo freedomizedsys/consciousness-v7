@@ -1,5 +1,5 @@
 # Consciousology v7  
-**The Operating System of "Existence": A Dynamic Unified Framework for Consciousness Generation, Collective Coexistence, and Cosmic Evolution**
+**The Operating System of Existence: A Dynamic Evolutionary Framework for Consciousness from the Individual to the Universe**
 
 # 意識學 v7
 **「存在」的操作系統：從個體到宇宙的意識動態進化框架**
