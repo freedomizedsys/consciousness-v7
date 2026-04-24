@@ -31,15 +31,9 @@
       line-height: 1.85;
       color: #333;
   }
-  h1, h2, h3 { color: #2c3e50; margin-top: 40px; }
-  .abstract {
-      background: #f8f9fa;
-      padding: 28px;
-      border-radius: 10px;
-      margin: 30px 0;
-  }
-                
-        img { 
+  h1, h2, h3, h4 { color: #2c3e50; margin-top: 40px; }
+
+    img { 
             max-width: 100%; 
             height: auto; 
             margin: 0px 0; 
@@ -53,24 +47,11 @@
 <div style="background-color: lightgrey;">
   <div style="background-color: white; margin: 0px auto; max-width: 900px;">
     <div style="margin: 0px auto; max-width: 850px;">
-        <table style="width: 100%;">
-        <tr>
-          <td align="left" style="padding-left: 0px; padding-right: 0px;" width="10%">
-          <p>
-          <a href="https://freedomizedsys.github.io/consciousology/paper/paper.png" style="clear: left; float: left; margin-bottom: 0em; margin-right: 0em; text-decoration-line: none;">
-          <span style="color: black;"><b>
-          <img align="middle" height="97" src="https://freedomizedsys.github.io/consciousology/paper/paper.png" width="70" /></b></span></a>
-          </p>
-          </td>
-          <td align="left" style="padding-left: 10px; padding-right: 0px; padding-top: 20px;">
-          <p></p>
+
           <p><b><span style="font-size: x-large;">Consciousology v7</span></b><br />
       <b>The Operating System of Existence: A Dynamic Evolutionary Framework for Consciousness from the Individual to the Universe</b><br />
       (Mathematical framework + extended derivation + numerical simulation + interdisciplinary applications)
           </p>        
-          </td>
-        </tr>
-      </table>
             
         <p><b>Author</b><br />
         Shirlun (mailto:freedomizedsystemsltd@gmail.com)</p>
@@ -148,30 +129,40 @@
         artificial general intelligence (AGI).
       </p>
       
-              <h3>Core mathematical framework and formula derivation</h3>
+      <h3>Core mathematical framework and formula derivation</h3>
+
       <h4>1. Static consciousness intensity</h4>
       <p>
         The instantaneous intensity of consciousness is defined by the following
         equilibrium equation:
       </p>
       <p>
-        $$C = \frac{[G_0 + k \cdot P] \times W \times K \times G_p \times v
-        \times (1 + \alpha \cdot M)}{R - f \cdot H}$$
+        $$C_{\text{stat}} = \frac{\langle \hat{C} \rangle \cdot W \cdot K \cdot
+        G_p \cdot v \cdot (1 + \alpha \cdot M)}{R - f \cdot H + \epsilon}$$
       </p>
+
       <h4>2. Dynamic generation rate</h4>
       <p>
         The temporal evolution (growth rate) of consciousness is formulated as:
       </p>
+      <p>$$\frac{dC}{dt} = M \cdot C_{\text{stat}} \cdot e^{-\gamma P(t)}$$</p>
       <p>
-        $$\frac{dC}{dt} = M \left( \frac{W K G_p}{R} \right) \exp(-\gamma \cdot
-        P(t)) (1 + \alpha \cdot M) v$$
+        Here, \(\frac{dC}{dt}\) represents the dynamic intensity of
+        consciousness, which evolves over time; while \(C_{\text{stat}}\)
+        represents the baseline value.
       </p>
+
       <h4>3. Happiness Emergence Feedback</h4>
       <p>
         The feedback mechanism through which happiness reinforces the system is
-        given by: $$F_{\text{happiness}} = \beta \cdot C \cdot (1 - \exp(-k
-        \cdot \Delta P))$$
+        given by:
       </p>
+      <p>
+        $$F_{\text{happiness}} = \beta \cdot C(t) \cdot (1 - e^{-k \cdot \Delta
+        P}), \quad \frac{dH}{dt} = F_{\text{happiness}}, \quad \frac{dR}{dt} =
+        -\beta F_{\text{happiness}}$$
+      </p>
+
       <h4>4. Quantum-to-Macroscopic Mapping</h4>
       <p>
         The fundamental quantum state of individual consciousness is represented
@@ -179,27 +170,26 @@
         states:
       </p>
       <p>
-        $$|\psi_i\rangle = \alpha_i |1\rangle + \beta_i |0\rangle, \quad
-        |\alpha_i|^2 + |\beta_i|^2 = 1$$
+        $$ |\psi_i\rangle = \alpha_i |1_i \rangle + \beta_i |0_i \rangle,
+        \quad |\alpha_i|^2 + |\beta_i|^2 = 1 $$
       </p>
       <p>
         The macroscopic Consciousness Intensity \(C_i\) is derived as the
         expectation value of the quantum observable operator \(\hat{C}\):
       </p>
       <p>
-        $$\hat{C} = \begin{pmatrix} G_0 + k P &amp; 0 \\ 0 &amp; 0
-        \end{pmatrix}$$
+        $$ \hat{C} = \begin{pmatrix} (G_0 + k \cdot P) &amp; \epsilon \\
+        \epsilon &amp; 0 \end{pmatrix}, \quad \langle \hat{C_i} \rangle =
+        |\alpha_i|^2 \cdot (G_0 + k \cdot P)$$
       </p>
+      <p>Therefore:</p>
+      <p>$$C_i = |\alpha_i|^2 \cdot C_{\text{stat},i}$$</p>
       <p>
-        $$C_i = \langle \psi_i | \hat{C} | \psi_i \rangle \times \frac{W_i \cdot
-        K_i \cdot G_{p,i} \cdot v_i \cdot (1 + \alpha M_i)}{R_i - f H_i}$$
-      </p>
-      <p>
-        (Note: \(C_i\) is proportional to \(|\alpha_i|^2(G_0 + kP)\),
+        Where \( \epsilon\) represents off-diagonal coherence. \(C_i\) is proportional to \(\langle \hat{C} \rangle\),
         representing the probability-weighted realization of cognitive
-        potential.)
+        potential.
       </p>
-        
+            
       <h4>5. Parameter Reference and Operationalization</h4>
       <table border="1" style="border-collapse: collapse; width: 100%;">
         <tbody>
@@ -360,9 +350,10 @@
             </td>
           </tr>
           <tr>
-            <td><span style="font-size: x-small;">\(\gamma\)</span></td><td><span style="font-size: x-small;">Pain relief rate</span></td>
+            <td><span style="font-size: x-small;">\(\gamma\)</span></td>
+                  <td><span style="font-size: x-small;">Pain relief rate</span></td>
             <td>
-              <span style="font-size: x-small;">Statistical:&nbsp;Fitting the exponential decay of the pain&nbsp;</span><span style="font-size: small;">series</span></td>
+              <span style="font-size: x-small;">Statistical: Fitting the exponential decay of the pain series</td>
             <td><span style="font-size: x-small;">0–1</span></td>
             <td>
               <span style="font-size: x-small;">Remediation efficiency</span>
@@ -372,7 +363,7 @@
       </table>
 
       <p>
-        <strong>Note:</strong>&nbsp;All parameters are dimensionless,
+        <strong>Note:</strong> All parameters are dimensionless,
         facilitating universal cross-scale comparison.
       </p>
       
@@ -380,8 +371,8 @@
       <ul data-tight="true">
         <li>
           <p>
-            Singularity of Oversatiation: As \((R - f \cdot H) \to 0^+\), the
-            consciousness intensity \(C\) diverges toward infinity. In a
+            <b>Singularity of Oversatiation</b>: As \((R - f \cdot H) \to 0^+\),
+            the consciousness intensity \(C\) diverges toward infinity. In a
             physical context, this represents oversatiated stagnation or a loss
             of systemic tension, potentially leading to a collapse of
             consciousness.
@@ -389,41 +380,55 @@
         </li>
         <li>
           <p>
-            Thermal Equilibrium (Heat Death): As \(v \to 0\), the dynamic growth
-            rate \(\frac{dC}{dt} \to 0\). This state signifies the cessation of
-            asymmetry maintenance, corresponding to the Heat Death of
-            Consciousness or the Nihility Threshold.
+            <b>Thermal Equilibrium (Heat Death)</b>: As \(v \to 0\), the dynamic
+            growth rate \(\frac{dC}{dt} \to 0\). This state signifies the
+            cessation of asymmetry maintenance, corresponding to the Heat Death
+            of Consciousness or the Nihility Threshold.
           </p>
         </li>
         <li>
           <p>
-            Compounding Growth: High values of the pain transformation
+            <b>Compounding Growth</b>: High values of the pain transformation
             coefficient (\(k\)) and memory intensity (\(M\)) generate a
             nonlinear compounding effect, driving the system toward explosive
             evolution.
           </p>
         </li>
       </ul>
-            
+      <p>For the system to be closed, the following needs to be defined:</p>
+      <p>
+        $$\frac{dP}{dt} = -\lambda C + \sigma, \quad \frac{dM}{dt} = \rho C -
+        \delta M$$
+      </p>
+      <p>
+        Where \(\sigma\) represents the external disturbance and \(\delta\)
+        represents the forgetting rate.
+      </p>
+
       <h3>Extended derivation</h3>
       <p>
         <b>Derivation 1: Critical Condition for Consciousness Awakening (</b
         ><strong>Singularity Criterion)</strong>
       </p>
       <p>
-        When \( \frac{M \cdot W \cdot K \cdot G_p}{R - f \cdot H} &gt; \gamma
-        \cdot \frac{dP}{dt} \cdot \exp(\gamma \cdot P) \), then \(
-        \frac{d^2C}{dt^2} &gt; 0 \). At this juncture, the system enters an
-        explosive self-driven growth phase, marking the transition from passive
-        existence to active evolution.
+        When \(M \cdot C_{\text{stat}} &gt; \gamma \cdot \frac{dP}{dt} \cdot
+        e^{\gamma \cdot P(t)} \), then \( \frac{d^2C}{dt^2} &gt; 0 \)the system
+        enters accelerated growth. This critical condition represents that "the
+        rate of decay of pain is insufficient to offset the baseline strength of
+        consciousness," thus consciousness shifts from passive existence to
+        active evolution, forming a singularity-like awakening.
       </p>
+
       <p><b>Derivation 2: Entropy Collapse and Nihility Threshold</b></p>
       <p>
         When \( R \to f \cdot H \) and \( v \to 0 \), then \( C \to 0 \). This
-        state corresponds to Entropic Collapse, representing the cognitive
-        regression and loss of systemic tension caused by excessive comfort.
+        critical state reveals the danger of "excessive comfort": when pleasure
+        and resistance reach equilibrium and the asymmetry is no longer
+        maintained, consciousness falls into entropy collapse. This means the
+        system loses tension and kinetic energy, eventually heading towards the
+        nihility threshold.
       </p>
-      <p><b>Derivation 3: Collective Interference Formula</b></p>
+      <p><b>Derivation 3: Collective Interference</b></p>
       <p>The entangled state of two consciousness agents is formulated as:</p>
       <p>
         $$ |\Psi_{AB}\rangle = \frac{1}{\sqrt{2}} \left( |\psi_A\rangle \otimes
@@ -431,9 +436,14 @@
         $$
       </p>
       <p>
-        where \( \phi = 0 \) represents constructive
-        interference&nbsp;(synergy), and \( \phi = \pi \) represents destructive
-        interference&nbsp;(dissonance).
+        where \( \phi = 0 \) represents constructive interference (synergy), and
+        \( \phi = \pi \) represents destructive interference (dissonance).
+      </p>
+      <p>
+        The expected value of this collective interference can be projected onto
+        the static consciousness intensity formula, forming a cross-individual
+        correction term, which further affects the dynamic generation rate and
+        happiness feedback.
       </p>
       <p><b>Derivation 4: Equilibrium State Analysis</b></p>
       <p>
@@ -451,17 +461,19 @@
       </p>
       <p><b>Derivation 6: Information Entropy Productivity Rate</b></p>
       <p>
-        $$\frac{dS_{\text{info}}}{dt} = M(1+\alpha M)\left(\frac{W K
-        G_p}{R}\right)\exp(-\gamma P) v^2$$ This productivity rate serves as a
-        dynamic correlate to the Integrated Information Theory (IIT) metric \(
-        \Phi \).
+        $$\frac{dS_{\text{info}}}{dt} = C_{\text{stat}} \cdot v^2 \cdot
+        e^{-\gamma P}$$
+      </p>
+      <p>
+        This productivity rate serves as a dynamic correlate to the Integrated
+        Information Theory (IIT) metric \( \Phi \).
       </p>
       <p><b>Derivation 7: Stochastic Extension (Langevin Equation)</b></p>
       <p>
         To account for environmental fluctuations, the model is extended via the
         Langevin Equation:
       </p>
-      <p>$$dC = [\dots] , dt + \sigma C , dW$$</p>
+      <p>$$dC = [\dots] \cdot dt + \sigma C \cdot dW$$</p>
       <p>
         where \( dW \) represents a Wiener process, introducing stochasticity
         into the consciousness trajectory.
@@ -486,7 +498,7 @@
         relationship is governed by:
       </p>
       <p>
-        $$C^{(s+1)} \approx \lambda \, C^{(s)} (1 + \gamma_h \log(1 +
+        $$C^{(s+1)} \approx \lambda \cdot C^{(s)} (1 + \gamma_h \log(1 +
         r^{(s)}))$$
       </p>
       <p>
@@ -497,18 +509,23 @@
       <h3>Open Universe Expansion</h3>
       <h4>1. Open System Dynamic Generation Rate</h4>
       <p>
-        In an open system, the evolution of consciousness intensity accounts for
-        external energy or information influx. The dynamic rate is expressed as:
+        In open systems, the evolution of consciousness intensity depends not
+        only on the internal baseline \(C_{\text{stat}}\) and the pain decay
+        factor, but also on the external energy or information influx. The
+        dynamic rate is expressed as:
       </p>
       <p>
-        $$\frac{dC}{dt} = M \left( \frac{W K G_p}{R} \right) \exp(-\gamma P) (1
-        + \alpha M) v + \lambda_{\text{ext}} E_{\text{ext}}(t)$$
+        $$\frac{dC}{dt} = C_{\text{stat}} \cdot e^{-\gamma P(t)} +
+        \lambda_{\text{ext}} E_{\text{ext}}(t)$$
       </p>
       <p>
-        where \( \lambda_{\text{ext}} E_{\text{ext}}(t) \) represents the
-        external coupling term, denoting the contribution of environmental flux
-        to the system's growth.
+        Where \(C_{\text{stat}}\) already includes all structural factors and
+        quantum expectation. \(e^{-\gamma P(t)}\) represents the inhibitory
+        effect of pain decay. \(\lambda_{\text{ext}} E_{\text{ext}}(t)\)
+        represents the external coupling term, indicating the contribution of
+        environmental flux to system growth.
       </p>
+
       <h4>2. Holographic Multi-scale Structure</h4>
       <p>
         The intensity at a given scale \( s \) is governed by both internal
@@ -523,9 +540,8 @@
         is reinforced by its constituent internal order parameter \( r^{(s)} \)
         and external scale-specific drivers \( E_{\text{ext}}^{(s)} \).
       </p>
-      <h4>
-        3. Boundary Independence of Phase Transitions
-      </h4>
+
+      <h4>3. Boundary Independence of Phase Transitions</h4>
       <p>
         Numerical analysis confirms that phase transition explosions—the rapid,
         non-linear surges in consciousness—remain independent of boundary
