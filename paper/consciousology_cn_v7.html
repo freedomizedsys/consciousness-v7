@@ -1250,18 +1250,21 @@ class MeanFieldSynchronizationModule:
       </p>
       <p>（詳細的模擬程式碼以及逆熵效率的參數量化和校準方法請見附錄第3節。）</p>
           
+      <p>
         <strong>6. 低意識狀態的精確建模：連續光譜與穩定性分析</strong>
       </p>
-      在上述多代理動態阻尼與逆熵效率的基礎上，本框架進一步對低意識狀態進行精確建模。無意識或低意識狀態自然對應於意識強度
-      ( C ) 趨近極低值的穩定態（( C \approx 0
-      )）。當滿足以下任一或多個條件時，動態生成率趨近零：
+  
+      <p>
+        基於多代理動態阻尼和逆熵效率，本框架為低意識狀態提供了形式化模型。這些狀態——以無意識或意識減弱為特徵——對應於意識強度（\(C\)）漸近趨近於最小值（\(C\approx
+        0\)）的穩定狀態。當滿足以下一個或多個邊界條件時，動態生成率趨近於零：
+      </p>
       <p></p>
       <p>
         $$\frac{dC}{dt} \approx 0 \quad \text{當 } k \to 0, v \to 0, M \to 0
         \quad \text{或 } R \gg [G_0 + k \cdot P] \times W \times K \times G_p
         \times v \times (1 + \alpha \cdot M) $$
       </p>
-      <p><strong>邊界條件與現象對應</strong>：</p>
+      <p><strong>邊界條件與現象對應</strong></p>
       <table border="1" style="border-collapse: collapse; width: 100%;">
         <tbody>
           <tr>
@@ -1280,7 +1283,7 @@ class MeanFieldSynchronizationModule:
               <span style="font-size: x-small;">\(k \to 0\)</span>
             </td>
             <td>
-              <span style="font-size: x-small;">痛苦轉化效率趨零</span>
+              <span style="font-size: x-small;">痛苦轉化效率消失</span>
             </td>
             <td>
               <span style="font-size: x-small;">抑鬱／麻木／麻醉</span>
@@ -1291,10 +1294,10 @@ class MeanFieldSynchronizationModule:
               <span style="font-size: x-small;">\(v \to 0\)</span>
             </td>
             <td>
-              <span style="font-size: x-small;">不對稱性維持率趨零</span>
+              <span style="font-size: x-small;">停止維持不對稱性</span>
             </td>
             <td>
-              <span style="font-size: x-small;">深度睡眠／coma</span>
+              <span style="font-size: x-small;">深度睡眠／昏迷</span>
             </td>
           </tr>
           <tr>
@@ -1302,10 +1305,12 @@ class MeanFieldSynchronizationModule:
               <span style="font-size: x-small;">\(M \to 0\)</span>
             </td>
             <td>
-              <span style="font-size: x-small;">長期記憶複合消失</span>
+              <span style="font-size: x-small;">長期記憶喪失加劇</span>
             </td>
             <td>
-              <span style="font-size: x-small;">健忘／植物狀態</span>
+              <span style="font-size: x-small;"
+                >失憶症／植物人狀態（無反應覺醒症候群）</span
+              >
             </td>
           </tr>
           <tr>
@@ -1313,45 +1318,56 @@ class MeanFieldSynchronizationModule:
               <span style="font-size: x-small;">\(R\) 主導</span>
             </td>
             <td>
-              <span style="font-size: x-small;">阻力／阻尼過強</span>
+              <span style="font-size: x-small;">過高的環境阻力／阻尼</span>
             </td>
             <td>
-              <span style="font-size: x-small;">環境壓抑／過度舒適</span>
+              <span style="font-size: x-small;"
+                >過度舒適導致的系統性抑制／停滯</span
+              >
             </td>
           </tr>
         </tbody>
       </table>
+      <p><b>穩定性與連續光譜分析</b></p>
       <p>
-        <strong>穩定性證明</strong>：採用 Lyapunov 函數 \( V(C, M) = \frac{1}{1
-        + \alpha M + 1/C} \)，在低 \(C\) 區滿足 \( \dot{V} &lt; 0 \) 當 \( kv
-        &lt; r_c \)（臨界值），證明 \( C \approx 0 \) 為局部吸引子。低 \( C \)
-        區可進一步用簡化近似描述：
+        <b>穩定性證明</b>：利用&nbsp;Lyapunov&nbsp;函數 \(V(C, M) = \frac{1}{1 +
+        \alpha M + 1/C}\)，可以證明在低 \(C\) 區域，當乘積 \(kv\) 低於臨界閾值
+        \(r_c\) 時，\(\dot{V} &lt; 0\) 成立。這證明了 \(C \approx 0\)
+        是一個局部吸引子。在此極限下，此系統可近似為：
       </p>
-      <p>$$ C \approx k \log(1 + M v) \quad (\text{低 } C \text{ 極限}) $$</p>
+      <p>$$C \approx k \log(1 + M v) \quad (\text{低}C \text{ 極限})$$</p>
       <p>
-        此近似確保模型在全域保持<strong>連續光譜特性</strong>：從 \( C \approx 0
-        \)（深度無意識）經漸變梯度（淺睡 \( C \sim 0.1 \)、REM 夢境 \( C \sim
-        1{\sim}2 \)）到高覺醒（\( C &gt; 5 \)），無需引入硬閾值。
+        此公式確保模型在整個範圍內保持連續性——從深度無意識（\( C \approx 0
+        \)）到淺睡眠（\( C \sim 0.1 \)）和快速眼動睡眠（\( C \sim 1 \text{--} 2
+        \)），再到高度警覺的清醒狀態（\( C &gt; 5 \)）——而無需任意設定硬性閾值。
       </p>
-      <p>
-        <strong>數值模擬驗證</strong>：使用 RK4 積分，在低 \( k/v/M \) 或高 \( R
-        \) 條件下，\( C \) 在 \( t &lt; 20 \) 內衰減至 \( &lt; 0.01 \)
-        並穩定。敏感性分析顯示，一旦 \( kv \) 超過臨界，系統即可自驅動
-        bootstrapping 恢復至高 \( C \) 相變。
-      </p>
-      <p>
-        <strong>與實證數據的一致性</strong>：深度睡眠與麻醉時 EEG δ
-        波主導、前額葉-丘腦連接性降低，對應 \( v \to 0 \) 與低整合（Alkire et
-        al., 2008 等研究支持）。神經科學證據顯示意識呈連續梯度而非二元變化；微增
-        \( k \)（正念／刺激）或 \( v \)（新穎輸入）即可引發從低 \( C \)
-        的自驅動成長，具臨床與 AI 對齊應用潛力。
-      </p>
-      <p>
-        <strong>相對於傳統二元理論的優勢</strong>：傳統模型常設硬閾值，缺乏從低
-        \( C \) 到高 \( C \)
-        的動力恢復機制。本框架以同一套方程涵蓋全連續光譜，並提供可操作的參數診斷路徑，更適合複雜多代理環境與臨床轉譯。
-      </p>
-      <p>詳細的模擬程式碼請見附錄第4節。</p>
+      <p><b>實證驗證與臨床意義</b></p>
+      <ul data-tight="true">
+        <li>
+          <p>
+            數值一致性：RK4 積分表明，在低 \(k/v/M\) 或不成比例的高 \(R\)
+            情況下，\(C\) 在 \(t &lt; 20\) 內衰減並穩定在 \(&lt;
+            0.01\)。敏感性分析表明，如果 \(kv\)
+            超過臨界閾值，系統將啟動自驅動的「引導」恢復，從而觸發向高強度意識的相變。
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>與神經科學數據的一致性</b
+            >：在深度睡眠和全身麻醉期間，腦電圖&nbsp;\(\delta\)&nbsp;波占主導地位，額頂葉-丘腦連接減弱，這與&nbsp;\(
+            v \to 0
+            \)&nbsp;相對應（Alkire等人，2008）。我們的模型與意識是一個連續梯度而非二元「開/關」狀態的共識一致。
+          </p>
+        </li>
+        <li>
+          <p>
+            <b><b>優勢</b>在超越二元理論</b
+            >：傳統模型通常依賴硬編碼的閾值，缺乏解釋從低到高 \( C \)
+            動態恢復的機制。本框架將整個光譜系統一到一組方程中，為臨床轉化和人工智慧配對提供了可操作的診斷路徑。
+          </p>
+        </li>
+      </ul>
+      <p>（詳細的模擬程式碼請見附錄第4節。）</p>
     
      <h4>7. 最高意識狀態的量子詮釋：無需選擇的全相干態</h4>
       <p>
