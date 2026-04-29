@@ -232,7 +232,7 @@
             <td><span style="font-size: x-small;">記憶貢獻係數</span></td>
             <td><span style="font-size: x-small;">統計：複合增長回歸</span></td>
             <td><span style="font-size: x-small;">0.1–0.4</span></td>
-            <td><span style="font-size: x-small;">歷史慣性</span></td>
+            <td><span style="font-size: x-small;">經驗和教訓</span></td>
           </tr>
           <tr>
             <td><span style="font-size: x-small;">\(R\)</span></td>
@@ -298,17 +298,28 @@
         </li>
         <li>
           <p>
-            <b> 複合成長</b>：痛苦轉化係數（\(k\)）和記憶強度（\(M\)）的高值會產生非線性複合效應，推動系統走向爆發式發展。
+            <b> 複合成長</b
+            >：痛苦轉化係數（\(k\)）和記憶強度（\(M\)）的高值會產生非線性複合效應，推動系統走向爆發式發展。
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>習慣行為</b>：\(P\) 包括一般的外在干擾 \(\sigma\)
+            以及在特定情況下產生的額外挫折和渴望成分（例如習慣模式受到阻礙）。\(R\)
+            代表系統成長的一般阻力，包括外在環境摩擦、社會互動抑制、重複行為所引起的認知慣性。
           </p>
         </li>
       </ul>
 
-      <p>要使系統閉合，需要定義：</p>
+      <p>為使模型閉合，定義以下公式：</p>
       <p>
-        $$\frac{dP}{dt} = -\lambda C + \sigma, \quad \frac{dM}{dt} = \rho C -
-        \delta M$$
+        $$\frac{dP}{dt} = -\lambda C + \sigma + \kappa \cdot (1 - \text{Sat})
+        \cdot R, \quad \frac{dM}{dt} = \rho C - \delta M$$
       </p>
-      <p>其中 \(\sigma\) 為外部擾動，\(\delta\) 為遺忘率。</p>
+      <p>
+        其中 \(\sigma\) 表示外部干擾，\(\kappa &gt; 0\)，\(\text{Sat}\)
+        表示滿意度；\(\rho\) 表示轉換率，\(\delta\) 表示遺忘率。
+      </p>
 
       <h3>擴展推導</h3>
       <h4>推導 1：意識覺醒的臨界條件（奇點準則）</h4>
