@@ -313,7 +313,7 @@
               <span style="font-size: x-small;">Statistical: Compound growth regression</span>
             </td>
             <td><span style="font-size: x-small;">0.1–0.4</span></td>
-            <td><span style="font-size: x-small;">Historical inertia</span></td>
+            <td><span style="font-size: x-small;">Experiences and lessons learned</span></td>
           </tr>
           <tr>
             <td><span style="font-size: x-small;">\(R\)</span></td>
@@ -406,15 +406,27 @@
             evolution.
           </p>
         </li>
+        <li>
+          <p>
+            <b>Habitual behavior</b>: \(P\) includes general external
+            disturbances \(\sigma\) as well as additional frustration and desire
+            components arising in specific situations (e.g., obstruction of
+            habitual patterns). \(R\) represents general resistance to system
+            growth, including external environmental friction, social
+            interaction inhibition, and cognitive inertia caused by repetitive
+            behaviors.
+          </p>
+        </li>
       </ul>
-      <p>For the system to be closed, the following needs to be defined:</p>
+      <p>For the model to be closed, the following formula are defined:</p>
       <p>
-        $$\frac{dP}{dt} = -\lambda C + \sigma, \quad \frac{dM}{dt} = \rho C -
-        \delta M$$
+        $$\frac{dP}{dt} = -\lambda C + \sigma + \kappa \cdot (1 - \text{Sat})
+        \cdot R, \quad \frac{dM}{dt} = \rho C - \delta M$$
       </p>
       <p>
-        Where \(\sigma\) represents the external disturbance and \(\delta\)
-        represents the forgetting rate.
+        Where \(\sigma\) represents external interference, \(\kappa &gt; 0\),
+        \(\text{Sat}\) represents satisfaction; \(\rho\) represents conversion
+        rate, and \(\delta\) represents forgetting rate.
       </p>
 
       <h3>Extended derivation</h3>
