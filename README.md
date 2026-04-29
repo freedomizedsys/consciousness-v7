@@ -59,6 +59,7 @@ Consciousology v7 proposes a unified dynamic framework that formalizes conscious
 ## Repository Structure / 儲存庫結構
 
 - `consciousology_v7_simulation.py` — Main simulation script / 主要模擬程式
+- `habit_dynamics_rk4.py` - auxiliary simulation program / 輔助模擬程式
 - `consciousness_dynamics_simulation.py` - Helper code in Section 5 of the discussion / 討論部分第5節的輔助代碼
 - `low_consciousness_simulation.py` - Helper code in Section 6 of the discussion / 討論部分第6節的輔助代碼
 - `figures/` — Four figures used in the paper / 論文四張圖表
