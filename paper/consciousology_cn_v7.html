@@ -110,7 +110,7 @@
 
       <h4>2. 動態生成率</h4>
       <p>意識的時間演化（成長率）可表述為：</p>
-      <p>$$\frac{dC}{dt} = M \cdot C_{\text{stat}} \cdot e^{-\gamma P(t)}$$</p>
+      <p>$$\frac{dC}{dt} = M(t) \cdot C_{\text{stat}} \cdot e^{-\gamma P(t)}$$</p>
       <p>
         此處 \(\frac{dC}{dt}\) 為動態意識強度，隨時間演化；而
         \(C_{\text{stat}}\) 為基準值。
@@ -301,14 +301,9 @@
         </li>
         <li>
           <p>
-            <b
-              ><b><b>習慣行為</b></b
-              >與</b
-            ><b><b>認知慣性</b></b
-            >：阻力 \(R\)
-            代表系統在成長過程中遭遇的廣義阻力，包括外在環境摩擦、社會抑制，以及重複行為所引起的認知慣性。痛苦
-            \(P\) 則包含一般外部干擾
-            \(\sigma\)，以及因習慣模式受阻而引起的挫折與癮想。
+            <b>習慣行為與認知慣性</b>：阻力 \(R\)
+            代表系統在成長過程中遭遇的廣義阻力，包括外在環境摩擦、社會抑制，以及重複行為所引起的認知慣性；痛苦
+            \(P\) 包括因習慣模式受阻而引起的挫折與癮想；而 \(M\) 則包括習慣對新記憶的抑制。
           </p>
         </li>
         <li>
@@ -328,14 +323,19 @@
         $$\frac{dR}{dt} = -F_{\text{happiness}} + \rho_h \cdot (1 - \text{Sat})
         \cdot R_{\text{rep}} - \delta_h \cdot C$$
       </p>
-      <p>$$\frac{dP}{dt} = -\lambda C + \sigma + R(t)$$</p>
-      <p>$$\frac{dM}{dt} = \rho C - \delta M - R(t)$$</p>
+      <p>
+        $$\frac{dP}{dt} = -\lambda \cdot C - \delta_P \cdot P + \gamma_R
+        \cdot R(t)$$
+      </p>
+      <p>
+        $$\frac{dM}{dt} = \rho_M \cdot C - \delta_M \cdot M - \gamma_R \cdot
+        R(t)$$
+      </p>
       <p>
         其中 \(\rho_h\) 表示習慣強化率，\(\text{Sat}\) 表示滿意度，\(
-        R_{\text{rep}} \) 表示重複率，\(\delta_h\)
-        表示消除率（有意識地打破習慣）；\(\lambda\)
-        表示消除率（有意識地轉化痛苦），\(\sigma\) 表示外部隨機干擾；\(\rho\)
-        表示記憶形成率，\(\delta\) 表示遺忘率。
+        R_{\text{rep}} \) 表示重複率，\(\delta_h\) 表示習慣消除率；\(\delta_P\)
+        表示痛苦衰減率，\(\gamma_R\) 表示阻力耦合強度；\(\rho_M\)
+        表示記憶形成率，\(\delta_M\) 表示記憶遺忘率。
       </p>
       <p>在尺度 \(s\) 上，滿意度函數 \(\text{Sat}\) 展開為：</p>
       <p>
@@ -343,14 +343,14 @@
         C^{(s)}_{\text{obs}} \big|$$
       </p>
       <p>
-        校正增益 \(\phi^{(s)} = \phi_0 \cdot (1 + \gamma_{sat} \cdot | \Delta
+        校正增益 \(\phi^{(s)} = \phi_0 \cdot (1 + \gamma_{Sat} \cdot | \Delta
         e_{global} |)\) 用來調整預測誤差對滿意度的影響。
       </p>
       <p>
         預測的意識強度定義為 \(C^{(s)}_{\text{pred}} = \Lambda^{(s)} \cdot
         C^{(s-1)} \cdot \big(1 + \gamma_h \log(1 +
         r^{(s)})\big)\)，觀測到的意識強度為 \(C^{(s)}_{\text{obs}} \approx
-        C^{(s)}_{(t)}\)；\(\Lambda^{(s)}\) 表示投影常數，\(\gamma_h\)
+        C^{(s)}{(t)}\)；\(\Lambda^{(s)}\) 表示投影常數，\(\gamma_h\)
         表示熵修正係數，\(r^{(s)}\) 表示當前尺度的內部序參量。
       </p>
       <p>
