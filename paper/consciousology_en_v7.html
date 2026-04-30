@@ -380,75 +380,120 @@
       </p>
       
       <h3>Boundary Conditions and System Behavior</h3>
+      <p>
+        This section explores the behavioral characteristics of the
+        consciousness dynamic system under different parameter constraints, with
+        particular attention to the moderating effects of oversatiation, steady
+        states, habits, and predictions on the overall trajectory. These
+        boundary conditions not only reveal the mathematical properties of this
+        model but also correspond to the critical states that the consciousness
+        system may reach in reality at the physical, psychological, and
+        existential levels.
+      </p>
       <ul data-tight="true">
         <li>
           <p>
-            <b>Singularity of Oversatiation</b>: As \((R - f \cdot H) \to 0^+\),
-            the consciousness intensity \(C\) diverges toward infinity. In a
-            physical context, this represents oversatiated stagnation or a loss
-            of systemic tension, potentially leading to a collapse of
-            consciousness.
+            <b>Oversatiation</b>: When \((R - f \cdot H) \to 0^+\), the
+            intensity of consciousness \(C\) tends to infinity. This state
+            represents the complete loss of tension and oversaturation of the
+            system, leading to instability and collapse. From a phenomenological
+            perspective, this is equivalent to a state of loss of attention due
+            to lack of motivation or excessive distraction under extremely
+            favorable conditions.
           </p>
         </li>
         <li>
           <p>
-            <b>Thermal Equilibrium (Heat Death)</b>: As \(v \to 0\), the dynamic
-            growth rate \(\frac{dC}{dt} \to 0\). This state signifies the
-            cessation of asymmetry maintenance, corresponding to the Heat Death
-            of Consciousness or the Nihility Threshold.
+            <b>Thermal Equilibrium (Heat Death)</b>: When the asymmetry
+            maintenance parameter \(v \to 0\), the consciousness growth rate
+            \(\frac{dC}{dt} \to 0\). At this point, the system can no longer
+            maintain its inherent asymmetry and tends towards a uniform
+            equilibrium state with maximum entropy. This state signifies the
+            "Heat death" or "Nihility Threshold" of the system.
           </p>
         </li>
         <li>
           <p>
-            <b>Habitual behavior</b>: \(R\) represents general resistance to system
-            growth, including external environmental friction, social
-            interaction inhibition, and cognitive inertia caused by repetitive
-            behaviors. \(P\) includes general external
-            disturbances \(\sigma\) as well as additional frustration and craving
-            components arising in specific situations (e.g., obstruction of
-            habitual patterns).
+            <b>Habitual behavior</b>: Resistance \(R\) represents the
+            generalized resistance encountered by a system during its growth
+            process, including external environmental friction, social
+            inhibition, and cognitive inertia caused by repetitive behaviors.
+            Pain \(P\) includes general external disturbances \(\sigma\), as
+            well as frustration and cravings caused by obstructed habitual
+            patterns.
           </p>
         </li>
         <li>
           <p>
-            <b>Compounding Growth</b>: High values of the pain transformation
-            coefficient (\(k\)) and memory intensity (\(M\)) generate a
-            nonlinear compounding effect, driving the system toward explosive
-            evolution.
+            <b>Compounding Growth effect</b>: High values of the pain conversion
+            coefficient \(k\) and memory intensity \(M\) will produce a
+            non-linear compound effect, thereby driving an explosive development
+            of consciousness intensity.
           </p>
         </li>
       </ul>
-
-      <p>To embed habitual dynamics, we extended \(R\), \(P\) and \(M\):</p>
+      <h3>Formula expansion</h3>
       <p>
-        $$\frac{dR}{dt} = -F_{\text{happiness}} + \rho_h \cdot (1 - \text{Sat}) \cdot
-        R_{\text{rep}} - \delta_h \cdot C$$
+        To more realistically depict the long-term impact of habitual behaviors
+        on the consciousness system, we extended \(R\), \(P\) and \(M\):
       </p>
+      <p>
+        $$\frac{dR}{dt} = -F_{\text{happiness}} + \rho_h \cdot (1 - \text{Sat})
+        \cdot R_{\text{rep}} - \delta_h \cdot C$$
+      </p>
+      <p>$$\frac{dP}{dt} = -\lambda C + \sigma + R(t)$$</p>
+      <p>$$\frac{dM}{dt} = \rho C - \delta M - R(t)$$</p>
       <p>
         Where \(\rho_h\) represents the habit reinforcement rate, \(\text{Sat}\)
-        represents the satisfaction rate, \( R_{\text{rep}} \) represents the
+        represents the satisfaction level, \(R_{\text{rep}} \) represents the
         repetition rate, and \(\delta_h\) represents the elimination rate
-        (consciously breaking the habit);
+        (consciously breaking the habit); \(\lambda\) represents the elimination
+        rate (consciously transforming pain), \(\sigma\) represents external
+        random interference; \(\rho\) represents the memory formation rate, and
+        \(\delta\) represents the forgetting rate.
       </p>
       <p>
-        $$\frac{dP}{dt} = -\lambda C + \sigma + R(t), \quad \frac{dM}{dt} = \rho
-        C - \delta M - R(t)$$
+        On scale \(s\), the satisfaction function \(\text{Sat}\) expands to:
       </p>
       <p>
-        Where \(\lambda\) represents the elimination rate (conscious acceptance
-        of pain), \(\sigma\) represents external interference; \(\rho\)
-        represents the memory rate, and \(\delta\) represents the forgetting
-        rate.
+        $$\text{Sat}^{(s)} = 1 - \phi^{(s)} \cdot \big| C^{(s)}_{\text{pred}} -
+        C^{(s)}_{\text{obs}} \big|$$
       </p>
       <p>
-        These extensions allow the resistance (R), pain (P), and memory (M)
-        subsystems to more richly describe how habitual reinforcement,
-        satisfaction, and conscious interventions shape the trajectory of
-        conscious intensity. In the overall framework, they act as boundary
-        modifiers, ensuring that the system does not collapse into trivial
-        equilibria or an out-of-control singularity without considering
-        behavioral inertia.
+        The correction gain \(\phi^{(s)} = \phi_0 \cdot (1 + \gamma_{sat} \cdot
+        | \Delta e_{global} |)\) is used to adjust the impact of prediction
+        error on satisfaction.
       </p>
+      <p>
+        The predicted consciousness intensity is defined as
+        \(C^{(s)}_{\text{pred}} = \Lambda^{(s)} \cdot C^{(s-1)} \cdot \big(1 +
+        \gamma_h \log(1 + r^{(s)})\big)\), and the observed consciousness
+        intensity is \(C^{(s)}_{\text{obs}} \approx C^{(s)}_{(t)}\);
+        \(\Lambda^{(s)}\) represents the projection constant, \(\gamma_h\)
+        represents the entropy correction coefficient, and \(r^{(s)}\)
+        represents the internal order parameter at the current scale.
+      </p>
+      <p>
+        This allows \(\text{Sat}\) to simultaneously encode expectation
+        satisfaction and error, becoming a prediction-correction mechanism. When
+        the prediction matches the observation, \(\text{Sat} \to 1\), habit
+        reinforcement is suppressed. When the deviation increases, \(\text{Sat}
+        \to 0\), compensation correction is triggered.
+      </p>
+      <p>
+        These extensions enable the three subsystems of resistance, pain, and
+        memory to more fully describe how habit reinforcement, satisfaction
+        regulation, and predictive-corrective processes shape the long-term
+        trajectory of conscious intensity. Within the overall framework, they
+        act as boundary correctors, preventing the system from ignoring
+        behavioral inertia, collapsing, or falling into trivial equilibrium, and
+        provide the mathematical basis for predictive ability, error
+        minimization, and phase transition behavior.
+      </p>
+      <p>
+        (For the simulation code, please see the reproducibility declaration.)
+      </p>
+            
       <h3>Extended derivation</h3>
       <h4>
         Derivation 1: Critical Condition for Consciousness Awakening (Singularity Criterion)</h4>
@@ -1030,13 +1075,12 @@ def pain_transformation_module(prediction_error, current_k, reflection_buffer):
         (Avoid Direct Reward Hacking)</h4>
         <p>To avoid the satisfaction stagnation caused by 
         the &quot;direct pursuit of high rewards&quot; in traditional RLHF, we can instead 
-        use the happiness feedback formula from Consciousology v7,&nbsp; \(F_{\text{quick 
-        happy}} = \beta \cdot C \cdot (1 - \exp(-k \cdot \Delta P))\), as an <b>
+        use the happiness feedback formula from Consciousology v7, as an <b>
         indirect reward signal</b>.</p>
         <p><b>Module architecture:</b></p>
         <pre data-params="python" data-pm-slice="1 1 []"><code>def natural_happiness_emergence(consciousness_intensity_C, delta_P, beta=1.0, k=0.7):
     # Rewards are given only when pain is effectively transformed.
-    happiness = beta * C * (1 - np.exp(-k * delta_P))
+    happiness = beta * consciousness_intensity_C * (1 - np.exp(-k * delta_P))
     
     # The reward function is fine-tuned only when happiness &gt; the threshold.
     if happiness &gt; happiness_threshold:
