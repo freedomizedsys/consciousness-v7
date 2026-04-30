@@ -8,7 +8,7 @@
 **A Dynamic Evolutionary Framework for Consciousness from the Individual to the Universe**
 
 # 意識學 v7
-**存在的操作系統：從個體到宇宙的意識動態進化框架**
+**存在的作業系統：從個體到宇宙的意識動態進化框架**
 
 ---
 
