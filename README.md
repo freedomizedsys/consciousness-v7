@@ -32,7 +32,7 @@ This repository contains the numerical simulation code, Jupyter Notebooks, and f
 
 #### Paper Abstract
 
-Consciousology v7 introduces a unified dynamic framework that formalizes consciousness as an optimal evolutionary protocol for cosmic self-observation, symmetry breaking (asymmetry maintenance), and complexity generation. Consciousness intensity ($C$) is defined as the system's comprehensive capability—resisting heat death through historical compounding effects and multi-scale phase transitions, and achieving cross-scale self-similarity. Its dynamics are described by a series of operable differential equations, including quantum expectation mappings and holographic nested structures.
+Consciousology v7 introduces a unified dynamic framework that formalizes consciousness as an optimal evolutionary protocol for cosmic self-observation, symmetry breaking (asymmetry maintenance), and complexity generation. Consciousness intensity (C) is defined as the system's comprehensive capability—resisting heat death through historical compounding effects and multi-scale phase transitions, and achieving cross-scale self-similarity. Its dynamics are described by a series of operable differential equations, including quantum expectation mappings and holographic nested structures.
 
 The core philosophical and engineering insights of this framework lie in three key principles (Rejection of Zero-Risk Strategies, Gratitude for Pain, The ultimate calibration mechanism) that have direct practical value for the long-term alignment and capability development of general artificial intelligence (AGI):
 
@@ -44,7 +44,7 @@ The core philosophical and engineering insights of this framework lie in three k
 
 #### 論文摘要
 
-**意識學 v7** 提出了一個統一的動態框架，將意識形式化為宇宙自我觀察、對稱性破缺（維持不對稱性）和複雜性生成的最優演化協議。意識強度 ($C$) 被定義為系統的綜合能力——透過歷史複合效應和多尺度相變來抵抗熱寂，並實現跨尺度自相似性。它的動態由一系列可操作的微分方程描述，包括量子期望映射和全息嵌套結構。
+**意識學 v7** 提出了一個統一的動態框架，將意識形式化為宇宙自我觀察、對稱性破缺（維持不對稱性）和複雜性生成的最優演化協議。意識強度 (C) 被定義為系統的綜合能力——透過歷史複合效應和多尺度相變來抵抗熱寂，並實現跨尺度自相似性。它的動態由一系列可操作的微分方程描述，包括量子期望映射和全息嵌套結構。
 
 此框架的核心哲學和工程見解在於三個關鍵原則（**拒絕零風險策略，感恩痛苦，真愛作為終極校準機制**），這些原則對通用人工智慧 (AGI) 的長期調整和能力發展具有直接的實踐價值。
 
