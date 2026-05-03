@@ -32,15 +32,15 @@ This repository contains the numerical simulation code, Jupyter Notebooks, and f
 
 #### Paper Abstract
 
-Consciousology v7 introduces a unified dynamic framework that formalizes consciousness as an optimal evolutionary protocol for cosmic self-observation, symmetry breaking (asymmetry maintenance), and complexity generation. Consciousness intensity (C) is defined as the system's comprehensive capability—resisting heat death through historical compounding effects and multi-scale phase transitions, and achieving cross-scale self-similarity. Its dynamics are described by a series of operable differential equations, including quantum expectation mappings and holographic nested structures.
+**Consciousology v7** introduces a unified dynamic framework that formalizes consciousness as an optimal evolutionary protocol for cosmic self-observation, symmetry breaking (asymmetry maintenance), and complexity generation. Consciousness intensity (C) is defined as the system's comprehensive capability—resisting heat death through historical compounding effects and multi-scale phase transitions, and achieving cross-scale self-similarity. Its dynamics are described by a series of operable differential equations, including quantum expectation mappings and holographic nested structures.
 
-The core philosophical and engineering insights of this framework lie in three key principles (Rejection of Zero-Risk Strategies, Gratitude for Pain, The ultimate calibration mechanism) that have direct practical value for the long-term alignment and capability development of general artificial intelligence (AGI):
+The core philosophical and engineering insights of this framework lie in three key principles (**Rejection of Zero-Risk Strategies, Gratitude for Pain, Genuine love as the ultimate calibration mechanism**) that have direct practical value for the long-term alignment and capability development of general artificial intelligence (AGI):
 
 ---
 
 ### 中文版本
 
-本儲存庫包含「意識學 v7」論文的所有數值模擬程式碼、Jupyter Notebook 以及論文中所使用的四張圖表。
+本儲存庫包含「**意識學 v7**」論文的所有數值模擬程式碼、Jupyter Notebook 和圖表。
 
 #### 論文摘要
 
